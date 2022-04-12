@@ -10,7 +10,7 @@ def display_username(username):
     return f"hi {escape(username)}"
 
 
-@app.route('/user/<int:id>')
+@app.route('/usr/<int:id>')
 def display_id(id):
     return f"your id is : {escape(id)}"
 

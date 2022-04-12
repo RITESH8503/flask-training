@@ -22,11 +22,11 @@ def patient():
 @app.route('/user/<name>')
 def user(name):
     if name == 'adm':
-        redirect(url_for('adm'))
+        return redirect(url_for('admin'))
     if name == 'doc':
-        redirect(url_for('doc'))
+        return redirect(url_for('doctor'))
     if name == 'pat':
-        redirect(url_for('pat'))
+        return redirect(url_for('patient'))
 
 
 if __name__ == '__main__':

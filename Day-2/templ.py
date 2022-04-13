@@ -14,5 +14,11 @@ def myapp(num):
     return render_template('table.html', num=num)
 
 
+@app.route('/action/<int:num>')
+def myaction(num):
+    a = num > 10
+    return render_template('action.html', num=a)
+
+
 if __name__ == '__main__':
     app.run(debug=True)

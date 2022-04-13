@@ -5,16 +5,20 @@ app = Flask(__name__)
 
 #Request and response
 @app.route('/login', methods=['GET', 'POST'])
+
 def login():
-    error = None
     if request.method == 'POST':
+        
         uname = request.form['username']
         pwd = request.form['password']
-        if valid_login(uname, pwd):
+        
+        if valid_login(uname, pwd):        
             if uname == 'abbas' and pwd == '1234':
                 return 'Hi %s' % uname + ' how are you'
             else:
                 return 'invalid login'
+        else:
+            return 'username and password are needed'
 
     return render_template('login.html')
 

@@ -8,7 +8,7 @@ app = Flask(__name__)
 def register():
     if request.method == 'POST':
         if validate_form(request.form['first_name'], request.form['last_name'], request.form['email'], request.form['phone']):
-            return render_template('success.html', result=request.form)
+            return render_template('success.html', res=request.form)
         else:
             return render_template('register.html', error="Invalid form")
 
@@ -21,3 +21,4 @@ def validate_form(fname, lname, email, phone):
 
 if __name__ == '__main__':
     app.run(debug=True)
+

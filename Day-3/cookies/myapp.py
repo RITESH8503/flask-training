@@ -38,6 +38,3 @@ def profile():
 if __name__ == '__main__':
     app.run(debug=True)
 
-
-# open
-# chrome://settings/cookies/detail?site=localhost

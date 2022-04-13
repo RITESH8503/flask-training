@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    p.error {
+      color: red;
+    }
+    p.success {
+      color: green;
+    }
+  </style>
+</head>
+
+<body>
+  <form method="POST">
+    <input type="text" name="mytz" id="mytz">
+    <button type="submit">Submit</button>
+  </form>
+
+  {% if current_time %}
+    {% if current_time != 'Invalid timezone' %}
+    <h3>Current time for timezone {{mytz}}:<p class="success">{{current_time}}</p>
+    </h3>
+  {% else %}
+    <h3>
+      <p class="error">{{current_time}}</p>
+    </h3>
+    {% endif %}
+  {% endif %}
+</body>
+
+</html>

@@ -32,7 +32,7 @@ Start the service
 
 #### 4. Configure Nginx
 
-    sudo vim /etc/nginx/sites-available/mysite.com
+`sudo vim /etc/nginx/sites-available/mysite.com`
 
     server {
     listen 80;
@@ -44,6 +44,8 @@ Start the service
         }
     }
 
-    cd /etc/nginx/sites-enabled
-    sudo ln -s ../sites-available/mysite.com .
-    sudo service nginx restart
+`cd /etc/nginx/sites-enabled`
+
+`sudo ln -s ../sites-available/mysite.com .`
+
+`sudo service nginx restart`

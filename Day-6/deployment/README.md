@@ -10,19 +10,19 @@
 
 Add the following lines
 
-[Unit]
-Description=gunicorn daemon
-After=network.target
+    [Unit]
+    Description=gunicorn daemon
+    After=network.target
 
-[Service]
-User=www-data
-Group=www-data
-WorkingDirectory=/var/www/pyapp/
+    [Service]
+    User=www-data
+    Group=www-data
+    WorkingDirectory=/var/www/pyapp/
 
-ExecStart=/usr/local/bin/gunicorn --access-logfile - --workers 3 --bind unix:/var/www/pyapp.sock wsgi:app
+    ExecStart=/usr/local/bin/gunicorn --access-logfile - --workers 3 --bind unix:/var/www/pyapp.sock wsgi:app
 
-[Install]
-WantedBy=multi-user.target
+    [Install]
+    WantedBy=multi-user.target
 
 Start the service
 `sudo systemctl start gunicorn`

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="{{url_for('static', filename='css/styles.css')}}">
+</head>
+
+<body>
+  <h3>List of Students</h3>
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Gender</th>
+      <th>Class</th>
+      <th>Roll</th>
+    </tr>
+    {% for student in students %}
+    <tr>
+      <td>{{student.name}}</td>
+      <td>
+        {% if student.gender == 'M' %}
+        Male
+        {% endif %}
+        {% if student.gender == 'F' %}
+        Female
+        {% endif %}
+      </td>
+      <td>{{student.class_name}}</td>
+      <td>{{student.roll_no}}</td>
+    </tr>
+    {% endfor %}
+  </table>
+
+  <p>
+    <a href="/add">Add a student</a>
+  </p>
+</body>
+
+</html>

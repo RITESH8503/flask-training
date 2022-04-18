@@ -3,13 +3,13 @@ from flask import Flask, make_response, redirect, render_template, session, url_
 
 
 app = Flask(__name__)
-app.secret_key = 'thisIsS@omeVery5ecret_sess_key'
+app.secret_key = 'thisIsS@omeVery5ecrsfkskdfksdfsdkfsdkfsdfsdkfkdsfet_sess_key'
 
 
 @app.route('/')
 def home():
     resp = make_response(render_template('home.html'))
-    session['my_session'] = 'abbas session 123'
+    session['my_session'] = 'something about session'
     return resp
 
 
@@ -22,7 +22,7 @@ def show_session():
 @app.route('/remove')
 def remove_session():
     session.pop('my_session', None)
-    return redirect(url_for('home'))
+    return '<h1>session removed</h1>'
 
 
 if __name__ == '__main__':

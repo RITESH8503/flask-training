@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+
+<body>
+  <h4>List of Students</h4>
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Class</th>
+      <th>Roll</th>
+      <th></th>
+      <th></th>
+    </tr>
+    {% for student in students %}
+    <tr>
+      <td>{{student.name}}</td>
+      <td>{{student.class_name}}</td>
+      <td>{{student.roll_no}}</td>
+      <td><a href="/edit/{{student.id}}">Edit</a></td>
+      <td><a href="/delete/{{student.id}}">Delete</a></td>
+    </tr>
+    {% endfor %}
+  </table>
+
+  <p>
+    <a href="/add">Add a student</a>
+  </p>
+
+  {% for message in get_flashed_messages() %}
+  {{message}}
+  {% endfor %}
+</body>
+
+</html>

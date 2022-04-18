@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+  <a href="/">Go back </a>
+
+  <form method="POST" action="/edit/{{student.id}}">
+    <p>
+      <label for="name">Name</label>
+      <input type="text" name="student_name" id="student_name" value="{{student.name}}">
+    </p>
+    <p>
+      <label for="class_name">Class</label>
+      <input type="text" name="class_name" id="class_name" value="{{student.class_name}}">
+    </p>
+    <p>
+      <label for="roll_no">Roll No</label>
+      <input type="text" name="roll_no" id="roll_no" value="{{student.roll_no}}">
+    </p>
+    <p>
+      <button type="submit">Update</button>
+    </p>
+  </form>
+
+  <p>
+    {% if masg %}
+    {{msg}}
+    {% endif %}
+  </p>
+</body>
+
+</html>

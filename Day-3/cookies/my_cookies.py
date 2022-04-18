@@ -15,5 +15,6 @@ def my_cookies():
 if __name__ == '__main__':
     app.run(debug=True)
 
-# to see the cookie in chrome 
+# to see the cookie in chrome
 # chrome://settings/cookies/detail?site=localhost
+

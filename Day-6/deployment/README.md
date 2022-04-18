@@ -1,6 +1,7 @@
 ### Deployment to cloud
 
 #### 1. Intsall and configure virtual environment
+
 #### 2. `pip install gunicorn`
 
 #### 3. Create and run Gunicorn service
@@ -8,7 +9,7 @@
 `sudo vim /etc/systemd/system/gunicorn.service`
 
 Add the following lines
-`
+
 [Unit]
 Description=gunicorn daemon
 After=network.target
@@ -22,13 +23,13 @@ ExecStart=/usr/local/bin/gunicorn --access-logfile - --workers 3 --bind unix:/va
 
 [Install]
 WantedBy=multi-user.target
-`
 
 Start the service
 `sudo systemctl start gunicorn`
 `sudo systemctl enable gunicorn`
 
-#### 4.  Configure Nginx
+#### 4. Configure Nginx
+
     server {
     listen 80;
     server_name your_domain.com www.your_domain.com;

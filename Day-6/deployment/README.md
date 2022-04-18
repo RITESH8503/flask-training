@@ -32,6 +32,8 @@ Start the service
 
 #### 4. Configure Nginx
 
+    `sudo vim /etc/nginx/sites-available/mysite.com`
+
     server {
     listen 80;
     server_name your_domain.com www.your_domain.com;
@@ -40,5 +42,10 @@ Start the service
             include proxy_params;
             proxy_pass http://unix:/var/www/pyapp/pyapp.sock;
         }
-
     }
+
+    `cd /etc/nginx/sites-enabled`
+
+    `sudo ln -s ../sites-available/mysite.com .`
+
+    `sudo service nginx restart`

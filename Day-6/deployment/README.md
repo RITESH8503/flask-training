@@ -25,8 +25,9 @@ Add the following lines
     WantedBy=multi-user.target
 
 Start the service
-`sudo systemctl start gunicorn`
-`sudo systemctl enable gunicorn`
+  `sudo systemctl start gunicorn`
+
+  `sudo systemctl enable gunicorn`
 
 #### 4. Configure Nginx
 

@@ -32,7 +32,7 @@ Start the service
 
 #### 4. Configure Nginx
 
-    `sudo vim /etc/nginx/sites-available/mysite.com`
+    sudo vim /etc/nginx/sites-available/mysite.com
 
     server {
     listen 80;

@@ -25,6 +25,7 @@ Add the following lines
     WantedBy=multi-user.target
 
 Start the service
+
   `sudo systemctl start gunicorn`
 
   `sudo systemctl enable gunicorn`

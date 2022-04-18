@@ -44,8 +44,6 @@ Start the service
         }
     }
 
-    `cd /etc/nginx/sites-enabled`
-
-    `sudo ln -s ../sites-available/mysite.com .`
-
-    `sudo service nginx restart`
+    cd /etc/nginx/sites-enabled
+    sudo ln -s ../sites-available/mysite.com .
+    sudo service nginx restart

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+  <form method="POST" action="/register">
+    <p>
+      <label for="email">Email</label>
+      <input type="email" name="email" id="email">
+    </p>
+    <p>
+      <label for="password">Password</label>
+      <input type="password" name="password" id="password">
+    </p>
+    <p>
+      <button type="submit">Register</button>
+    </p>
+  </form>
+
+  {% if msg %}
+  {{msg}}
+  {% endif %}
+</body>
+
+</html>

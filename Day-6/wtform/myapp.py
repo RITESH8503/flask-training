@@ -2,10 +2,10 @@
 from flask import Flask, flash, render_template, request
 from flask_sqlalchemy import SQLAlchemy
 from flask_wtf import FlaskForm
-from wtforms import StringField, RadioField, SubmitField, validators
-
+from wtforms import RadioField, StringField, SubmitField, validators
 
 app = Flask(__name__)
+
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///students.sqlite3'
 app.config['SECRET_KEY'] = 'ajafj@SFA61_jfsAQskjfsds@#kssd19FAFjsfXasdj_+#smfdksdfASDSD'
 
@@ -36,9 +36,12 @@ def index():
 class StudentForm(FlaskForm):
     name = StringField(
         'Name', [validators.DataRequired('Please enter student name')])
+
     gender = RadioField('Gender', choices=[('M', 'Male'), ('F', 'Female')])
+
     class_name = StringField(
         'Class', [validators.DataRequired('Please enter class')])
+
     roll_no = StringField(
         'Roll', [validators.DataRequired('Please enter roll')])
 

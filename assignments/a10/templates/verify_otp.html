@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+  <form method="POST" action="/verify_otp/{{email}}">
+    <p>
+      <label for="otp">OTP</label>
+      <input type="otp" name="otp" id="otp">
+    </p>
+    <p>
+      <button type="submit">Verify</button>
+    </p>
+  </form>
+
+  {% if msg %}
+  {{msg}}
+  {% endif %}
+</body>
+
+</html>
